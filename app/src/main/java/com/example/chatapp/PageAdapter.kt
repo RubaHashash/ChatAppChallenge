@@ -1,0 +1,33 @@
+package com.example.chatapp
+
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+
+class PageAdapter(fm:FragmentManager):FragmentPagerAdapter(fm){
+    /**
+     * Return the Fragment associated with a specified position.
+     */
+    override fun getItem(position: Int): Fragment {
+        when(position){
+            0 -> return Chats()
+            1-> return Users()
+            else -> return Chats()
+        }
+    }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        when(position){
+            0 -> return "Chats"
+            1-> return "Users"
+        }
+        return super.getPageTitle(position)
+    }
+    /**
+     * Return the number of views available.
+     */
+    override fun getCount(): Int {
+        return 2
+    }
+
+}
