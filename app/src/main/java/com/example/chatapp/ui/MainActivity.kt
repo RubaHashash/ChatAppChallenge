@@ -4,6 +4,7 @@ import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.example.chatapp.MyAdapter
@@ -12,9 +13,12 @@ import com.example.chatapp.R
 import com.example.chatapp.db.UserDatabase
 import com.example.chatapp.db.UserRow
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_users.*
 
 class MainActivity : AppCompatActivity() {
+    var myAdapter:MyAdapter ?= null
+    var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,18 +27,17 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = PageAdapter(supportFragmentManager)
         tabLayout.setupWithViewPager(viewPager)
 
-        var db = Room.databaseBuilder(applicationContext,UserDatabase::class.java, "User Database").build()
+        var db = Room.databaseBuilder(applicationContext, UserDatabase::class.java, "User Database").build()
 
         Thread{
             val myUserList = UsersList(200)
             db.getUserDao().insertAll(myUserList)
 
-            usersList.layoutManager = LinearLayoutManager(this)
-            var myAdapter = MyAdapter(myUserList)
+            myAdapter = MyAdapter(myUserList)
             usersList.adapter = myAdapter
         }.start()
-    }
 
+    }
     private fun UsersList(size:Int): List<UserRow>{
         val list = ArrayList<UserRow>()
 
@@ -50,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
         return list
     }
+
 
 
 }
