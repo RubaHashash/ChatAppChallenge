@@ -21,7 +21,7 @@ class PageAdapter(fm:FragmentManager):FragmentPagerAdapter(fm){
     override fun getPageTitle(position: Int): CharSequence? {
         when(position){
             0 -> return "Chats"
-            1-> return "Users"
+            1-> return "Friends"
         }
         return super.getPageTitle(position)
     }
