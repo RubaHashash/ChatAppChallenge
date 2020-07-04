@@ -25,7 +25,14 @@ class MainActivity : AppCompatActivity() {
 
         var db = Room.databaseBuilder(applicationContext,UserDatabase::class.java, "User Database").build()
 
+        Thread{
+            val myUserList = UsersList(200)
+            db.getUserDao().insertAll(myUserList)
 
+            usersList.layoutManager = LinearLayoutManager(this)
+            var myAdapter = MyAdapter(myUserList)
+            usersList.adapter = myAdapter
+        }.start()
     }
 
     private fun UsersList(size:Int): List<UserRow>{
