@@ -1,15 +1,15 @@
 package com.example.chatapp
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.chatapp.db.UserRow
 import kotlinx.android.synthetic.main.user_row.view.*
 
-class MyAdapter(val userlist: List<UserRow>) :RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
+class MyAdapter(val userlist: List <UserRow>) :RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val image: ImageView = itemView.user_image

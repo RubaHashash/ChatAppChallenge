@@ -3,6 +3,8 @@ package com.example.chatapp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.chatapp.ui.Chats
+import com.example.chatapp.ui.Users
 
 class PageAdapter(fm:FragmentManager):FragmentPagerAdapter(fm){
     /**
