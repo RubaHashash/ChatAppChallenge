@@ -1,23 +1,22 @@
 package com.example.chatapp.ui
 
-import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.navigation.NavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
-import com.example.chatapp.MyAdapter
-import com.example.chatapp.PageAdapter
+import com.example.chatapp.adapters.MyAdapter
+import com.example.chatapp.adapters.PageAdapter
 import com.example.chatapp.R
+import com.example.chatapp.adapters.ChatAdapter
+import com.example.chatapp.db.ChatRow
 import com.example.chatapp.db.UserDatabase
 import com.example.chatapp.db.UserRow
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_chats.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_users.*
 
 class MainActivity : AppCompatActivity() {
-    var myAdapter:MyAdapter ?= null
+    var myAdapter: MyAdapter?= null
     var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

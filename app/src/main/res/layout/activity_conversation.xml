@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.ChatLogActivity">
+    tools:context=".ui.ConversationActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_chatlog"
+        android:id="@+id/recyclerview_conversation"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
@@ -16,10 +16,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/editText_chatlog" />
+        app:layout_constraintBottom_toTopOf="@id/editText_conversation"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     <EditText
-        android:id="@+id/editText_chatlog"
+        android:id="@+id/editText_conversation"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
@@ -30,7 +31,7 @@
         app:layout_constraintEnd_toStartOf="@+id/send_btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recyclerview_chatlog" />
+        app:layout_constraintTop_toBottomOf="@id/recyclerview_conversation" />
 
     <Button
         android:id="@+id/send_btn"

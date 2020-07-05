@@ -20,5 +20,5 @@
         android:id="@+id/chatLogActivity"
         android:name="com.example.chatapp.ui.ChatLogActivity"
         android:label="activity_chat_log"
-        tools:layout="@layout/activity_chat_log" />
+        tools:layout="@layout/activity_conversation" />
 </navigation>

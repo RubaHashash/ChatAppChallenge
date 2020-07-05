@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/chat_user_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/chat_userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/chat_user_image" />
+
+        <TextView
+            android:id="@+id/latest_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="latest_message"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/chat_user_image"
+            android:layout_below="@id/chat_userName"/>
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
