@@ -10,7 +10,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatapp.R
 import com.example.chatapp.db.UserRow
-import com.example.chatapp.ui.ConversationActivity
 import kotlinx.android.synthetic.main.user_row.view.*
 
 class MyAdapter(val userlist: List <UserRow>) :RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
