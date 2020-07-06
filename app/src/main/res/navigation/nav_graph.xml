@@ -13,12 +13,12 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph">
         <action
-            android:id="@+id/action_mainFragment_to_chatLogActivity"
-            app:destination="@id/chatLogActivity" />
+            android:id="@+id/action_mainFragment_to_conversationActivity"
+            app:destination="@id/conversationActivity" />
     </fragment>
     <activity
-        android:id="@+id/chatLogActivity"
-        android:name="com.example.chatapp.ui.ChatLogActivity"
-        android:label="activity_chat_log"
+        android:id="@+id/conversationActivity"
+        android:name="com.example.chatapp.ui.ConversationActivity"
+        android:label="activity_conversation"
         tools:layout="@layout/activity_conversation" />
 </navigation>

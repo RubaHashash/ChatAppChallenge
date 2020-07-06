@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,7 @@ class MyAdapter(val userlist: List <UserRow>) :RecyclerView.Adapter<MyAdapter.My
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val image: ImageView = itemView.user_image
         val username: TextView = itemView.userName
+        val ItemLayout = itemView.findViewById<LinearLayout>(R.id.linearLayout_users)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -34,10 +36,10 @@ class MyAdapter(val userlist: List <UserRow>) :RecyclerView.Adapter<MyAdapter.My
         holder.image.setImageResource(currentUser.image!!)
         holder.username.text = currentUser.username!!
 
-//        holder.itemView.setOnClickListener {
-//            Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_chatLogActivity)
-//        }
-
+        val userHolder = holder as MyViewHolder
+        userHolder.ItemLayout.setOnClickListener {
+            Navigation.findNavController(userHolder.itemView).navigate(R.id.action_mainFragment_to_conversationActivity)
+        }
     }
 
 }
